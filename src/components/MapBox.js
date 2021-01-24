@@ -82,6 +82,13 @@ function MapBox() {
     padding: "10px",
   };
 
+  const divStyle = {
+    textAlign: "center",
+    fontFamily: 'Arial, Helvetica, sans-serif',
+    maxWidth: "250px",
+  }
+  
+
   return (
     <MapGL
       {...viewport}
@@ -108,7 +115,11 @@ function MapBox() {
           closeOnClick={false}
           onClose={() => setPopupInfo(null)}
         >
-          <h1>{popupInfo.info}</h1>
+        <div style={divStyle}>
+        <h4>{popupInfo.name}</h4>
+        <h5>Info: {popupInfo.info}</h5>
+        <h5><code><a style={{textDecoration:"None"}} href={"https://www.google.com/maps/place/ "+ popupInfo.address.replace(" ", "+")} target="_blank">Address: {popupInfo.address}</a></code></h5>
+        </div>
         </Popup>
       )}
       <div style={geolocateStyle}>
