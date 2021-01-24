@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ProSidebar, Menu, MenuItem, SidebarHeader} from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import "./styles.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -21,6 +20,7 @@ import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AddIcon from '@material-ui/icons/Add';
+import LandingPage from "./components/LandingPage";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -143,6 +143,8 @@ export default function App() {
   };
 
   return (
+
+
     <div className="layout">
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
